@@ -1,38 +1,30 @@
 import React, { Component } from 'react'
-import Navbar from './Navbar'
-import Home from './Home'
-import Footer from './Footer'
 import { Link } from 'react-router-dom'
+import style from './Navbar.module.css'
 
-
-export default class App extends Component {
+export default class Navbar extends Component {
     render() {
         return (
-            <div>
-                <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                    <div class="container">
-                        <Link className=''="navbar-brand" href="#">Navbar</Link>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Features</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Pricing</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled">Disabled</a>
-                                </li>
-                            </ul>
-                        </div>
+            <div><nav className="navbar navbar-expand-lg bg-body-tertiary">
+                <div className={`${style.cont} container`}>
+                    <a className="navbar-brand" href="#">
+                        <img src="assets/imgs/logo.png" alt="logo" width={100}/>
+                    </a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon" />
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/movies">Movies</Link>
+                            </li>
+                        </ul>
                     </div>
-                </nav>
+                </div>
+            </nav>
             </div>
         )
     }
